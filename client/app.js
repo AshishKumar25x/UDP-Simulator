@@ -1,4 +1,9 @@
-const ws = new WebSocket("ws://localhost:8080");
+const WS_URL =
+    window.location.hostname === "localhost"
+        ? "ws://localhost:8080"
+        : "wss://https://udp-simulator.onrender.com";
+
+const ws = new WebSocket(WS_URL);
 
 const protocolInput = document.getElementById("protocol");
 const messageInput = document.getElementById("messageInput");
