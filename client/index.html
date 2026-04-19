@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliable UDP Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Reliable UDP Simulator</h1>
+
+    <div class="controls">
+        <label for="protocol">Protocol</label>
+        <select id="protocol">
+            <option value="stopwait">Stop-and-Wait</option>
+            <option value="gobackn">Go-Back-N</option>
+            <option value="selectiverepeat">Selective Repeat</option>
+        </select>
+
+        <label for="messageInput">Message</label>
+        <input id="messageInput" type="text" placeholder="Type message to send" value="Hello Reliable UDP">
+
+        <button id="sendBtn">Send Message</button>
+        <button id="stopBtn">Stop</button>
+    </div>
+
+    <div class="network">
+        <div class="host sender-host">
+            <h2>Sender</h2>
+            <p id="senderState">Idle</p>
+        </div>
+        <div class="channel">
+            <div class="channel-line"></div>
+            <div id="packetLayer" class="packet-layer"></div>
+        </div>
+        <div class="host receiver-host">
+            <h2>Receiver</h2>
+            <p id="receiverState">Idle</p>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <span id="sessionInfo">Disconnected</span>
+        <span id="liveTimer">🕒 00:00.0</span>
+    </div>
+
+    <div id="timeline"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
