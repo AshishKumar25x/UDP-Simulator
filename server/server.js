@@ -10,8 +10,7 @@ const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
-console.log("Server running on ws://localhost:8080");
+console.log(`WebSocket server running on port ${PORT}`);
 
 const WAIT_MS = 500;
 const STOPWAIT_TIMEOUT_MS = 1600;
